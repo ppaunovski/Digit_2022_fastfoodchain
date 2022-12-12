@@ -1,0 +1,42 @@
+.NavBar {
+    background-color: #C7A68B;
+    text-align: center;
+    align-items: center;
+}
+
+.NavBarHidden {
+    position: fixed;
+    transition-timing-function: ease-in;
+    transition: 0.5s;
+    text-align: center;
+    align-items: center;
+}
+
+.Menu > li {
+    padding-inline: 30px;
+    padding-top: 13px;
+    border:none;
+    position: relative;
+}
+
+.Menu > li:hover{
+    border: none;
+    background-color: #ba865c;
+    transition: all ease-in-out 1s;
+}
+
+.Menu > li::after{
+    content: '';
+    position: absolute;
+    width: 0px;
+    height: 5px;
+    left: 50%;
+    bottom:0;
+    background-color: white;
+    transition: all ease-in-out .25s;
+}
+
+.Menu > li:hover::after{
+    width: 100%;
+    left: 0;
+  }
