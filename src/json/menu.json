@@ -1,0 +1,27 @@
+{
+  "item1": {
+    "title": "Muffin",
+    "price": 50,
+    "image": "url"
+  },
+  "item2": {
+    "title": "Muffin",
+    "price": 50,
+    "image": "url"
+  },
+  "item3": {
+    "title": "Muffin",
+    "price": 50,
+    "image": "url"
+  },
+  "item4": {
+    "title": "Muffin",
+    "price": 50,
+    "image": "url"
+  },
+  "item5": {
+    "title": "Muffin",
+    "price": 50,
+    "image": "url"
+  }
+}
