@@ -1,7 +1,8 @@
 {
-  "item1": {
-    "title": "Muffin",
-    "price": 50,
+  "berry_crepes": {
+    "type": "Crepe",
+    "title": "Berry Crepes",
+    "price": 3,
     "image": "url"
   },
   "item2": {

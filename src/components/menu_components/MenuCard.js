@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react";
+import Modal from "./Modal";
 import OrderCounter from "./OrderCounter";
 
 function MenuCard(props) {
   const [count, setCount] = useState(1);
+  const [modal, setModal] = useState(false);
   return (
     // <div
     //   className={
@@ -17,41 +19,36 @@ function MenuCard(props) {
     // </div>
 
     <div className="group relative card card-compact w-56 bg-base-100 shadow-xl m-1">
-      <label htmlFor="my-modal-4">
-        <div className="hidden transition-all ease-in-out duration-1000 group-hover:cursor-pointer group-hover:flex justify-center items-center text-white w-full h-full rounded-xl bg-black/30 absolute">
-          Order now!
-        </div>
-      </label>
+      <div
+        onClick={() => setModal(!modal)}
+        className="hidden transition-all ease-in-out duration-1000 group-hover:cursor-pointer group-hover:flex justify-center items-center text-white w-full h-full rounded-xl bg-black/30 absolute"
+      >
+        Order now!
+      </div>
+
       <figure>
-        <img src="https://placeimg.com/400/225/arch" alt="Shoes" />
+        <img className="w-52 h-52" src={props.image} alt={props.title} />
       </figure>
       <div className="card-body">
-        <h2 className="card-title text-center">Shoes!</h2>
+        <h2 className="card-title text-center">{props.title}</h2>
 
         {/* <div className="hidden group-hover:block card-actions justify-end">
           <button className="btn btn-primary">Buy Now</button>
         </div> */}
       </div>
+
+      {modal && (
+        <Modal
+          props={props}
+          count={count}
+          modal={modal}
+          setModal={setModal}
+          setCount={setCount}
+        />
+      )}
       {/* The button to open modal */}
 
       {/* Put this part before </body> tag */}
-      <input type="checkbox" id="my-modal-4" className="modal-toggle" />
-
-      <label htmlFor="my-modal-4" className="modal cursor-pointer">
-        <label className="modal-box relative" htmlFor="">
-          <img src={props.image} className="w-52 h-52 m-auto"></img>
-          <h3 className="font-bold text-lg">{props.title}</h3>
-          <p className="py-4">{props.description}</p>
-          <p>{props.calories}</p>
-          <p>${props.price}</p>
-          <OrderCounter count={count} setCount={setCount} />
-          <div className="modal-action">
-            <label htmlFor="my-modal-4" className="btn">
-              Add to cart
-            </label>
-          </div>
-        </label>
-      </label>
     </div>
   );
 }

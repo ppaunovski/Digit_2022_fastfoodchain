@@ -1,8 +1,32 @@
 import React, { useContext, useEffect, useState } from "react";
 import MenuCard from "./MenuCard";
 import { ScrollContext } from "../../App";
+import chocolateChipCookie from "../../images/chocolate-chip-cookie.png";
+import chocolateCake from "../../images/chocolate-cake.png";
+// import { useGetData } from "../../hooks/useGetData";
+import { db } from "../../index.js";
+import { doc, getDocs, collection, query, where } from "firebase/firestore";
 
 function MenuItems(props) {
+  const [menuItems, setMenuItems] = useState([]);
+
+  //const [documents] = useGetData();
+
+  useEffect(() => {
+    const q = query(collection(db, "menu"));
+
+    const fetchData = async () => {
+      const querySnapshot = await getDocs(q);
+      let arr = [];
+      querySnapshot.forEach((doc) => {
+        arr.push(doc);
+      });
+      setMenuItems(arr);
+    };
+
+    fetchData();
+  }, []);
+
   const show = useContext(ScrollContext);
   const [style, setStyle] = useState("w-full h-20 bg-white sticky top-16");
 
@@ -17,9 +41,7 @@ function MenuItems(props) {
       );
     }
   }, [show]);
-  if (window.scrollY > 200) {
-    console.log("POGOLEMO");
-  }
+
   return (
     <article className=" w-full sm:w-[65vw]">
       <div className="w-full h-full">
@@ -28,19 +50,20 @@ function MenuItems(props) {
         </div>
         <div className="flex flex-col justify-center items-center">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-evenly gap-5">
-            <MenuCard
-              title="Muffin"
-              image="https://media.istockphoto.com/id/155099605/photo/overcooked-cinnamon-and-sugar-muffin.jpg?s=612x612&w=0&k=20&c=ojh_qCuTW-EiCCv6Oiw5l3q8C9sy3iIxP57vLEi4COc="
-              price="50"
-              description="Mufin Muffin Muffin"
-              calories="520"
-            />
-            <MenuCard />
-            <MenuCard />
-            <MenuCard />
-            <MenuCard />
-            <MenuCard />
-            <MenuCard />
+            {menuItems && menuItems.map((item) => console.log(item.data()))}
+
+            {menuItems &&
+              menuItems.map((item) => {
+                return (
+                  <MenuCard
+                    title={item.data().title}
+                    image={item.data().image}
+                    price={item.data().price}
+                    description={item.data().description}
+                    calories={item.data().calories}
+                  />
+                );
+              })}
           </div>
         </div>
       </div>
