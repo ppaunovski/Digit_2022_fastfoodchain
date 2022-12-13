@@ -1,24 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import MenuCard from "./MenuCard";
+import { ScrollContext } from "../../App";
 
 function MenuItems(props) {
-  const [show, setShow] = useState(false);
+  const show = useContext(ScrollContext);
   const [style, setStyle] = useState("w-full h-20 bg-white sticky top-16");
 
-  const controlNavbar = () => {
-    if (window.scrollY > 200) {
-      setShow(false);
-    } else {
-      setShow(true);
-    }
-  };
-  useEffect(() => {
-    window.addEventListener("scroll", controlNavbar);
-
-    return () => {
-      window.removeEventListener("scroll", controlNavbar);
-    };
-  }, []);
   useEffect(() => {
     if (show) {
       setStyle(

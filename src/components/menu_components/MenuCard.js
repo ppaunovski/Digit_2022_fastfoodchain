@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import OrderCounter from "./OrderCounter";
 
 function MenuCard(props) {
+  const [count, setCount] = useState(0);
   return (
     // <div
     //   className={
@@ -43,7 +44,7 @@ function MenuCard(props) {
           <p className="py-4">{props.description}</p>
           <p>{props.calories}</p>
           <p>${props.price}</p>
-          <OrderCounter />
+          <OrderCounter count={count} setCount={setCount} />
           <div className="modal-action">
             <label htmlFor="my-modal-4" className="btn">
               Add to cart

@@ -3,10 +3,31 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Menupage from "./pages/Menupage";
 import NavigationBar from "./components/NavigationBar";
+import { createContext, useEffect, useState } from "react";
+
+export const ScrollContext = createContext(false);
 
 function App() {
+  const [show, setShow] = useState(true);
+
+  const controlNavbar = () => {
+    if (window.scrollY > 200) {
+      setShow(false);
+    } else {
+      setShow(true);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", controlNavbar);
+
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  }, []);
+
   return (
-    <div className="App">
+    <ScrollContext.Provider value={show} className="App">
       <NavigationBar />
       <Router>
         <Routes>
@@ -15,7 +36,7 @@ function App() {
           <Route path="/menu/:whichMenu" element={<Menupage />} />
         </Routes>
       </Router>
-    </div>
+    </ScrollContext.Provider>
   );
 }
 

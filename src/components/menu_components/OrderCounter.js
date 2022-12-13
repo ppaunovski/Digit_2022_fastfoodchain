@@ -1,12 +1,27 @@
 import React, { useState } from "react";
 
-export default function () {
-  const [count, setCount] = useState(0);
+export default function ({ count, setCount }) {
+  //const [count, setCount] = useState(0);
   return (
     <div>
-      <button onClick={() => setCount(count - 1)}>-</button>
+      <button
+        className="btn btn-square scale-[.65] text-2xl"
+        onClick={() => {
+          if (count == 0) {
+            return;
+          }
+          setCount(count - 1);
+        }}
+      >
+        -
+      </button>
       <span>{count}</span>
-      <button onClick={() => setCount(count + 1)}>+</button>
+      <button
+        className="btn btn-square scale-[.65] text-2xl"
+        onClick={() => setCount(count + 1)}
+      >
+        +
+      </button>
     </div>
   );
 }
