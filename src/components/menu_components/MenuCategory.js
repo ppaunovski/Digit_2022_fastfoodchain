@@ -28,32 +28,44 @@ export default function MenuCategory({ setCategory }) {
           <div className="w-full flex flex-col gap-2">
             <MenuCategoryItem
               setCategory={setCategory}
+              title="Best sellers"
+              icon="https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/best-seller.png?alt=media&token=c37ef27e-b294-41e1-bc7f-8116a54cfd7b"
+              link="link_to"
+            />
+            <MenuCategoryItem
+              setCategory={setCategory}
               title="Pancakes"
-              image="url_od_img"
+              icon="https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/pancakes.png?alt=media&token=dd243acf-83cf-4481-a6c6-679bd215c856"
               link="link_to"
             />
             <MenuCategoryItem
               setCategory={setCategory}
               title="Pastery"
-              image="url_od_img"
+              icon="https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/croissant.png?alt=media&token=8fb8a34a-7e90-4056-bc33-7f5b5979784a"
               link="link_to"
             />
             <MenuCategoryItem
               setCategory={setCategory}
               title="Ice cream"
-              image="url_od_img"
+              icon="https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/ice-cream.png?alt=media&token=17688a57-ecc5-44df-af09-e594c418c5e6"
               link="link_to"
             />
             <MenuCategoryItem
               setCategory={setCategory}
               title="Coffee"
-              image="url_od_img"
+              icon="https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/coffee.png?alt=media&token=90fd8e8a-1442-4f2b-9bd8-fead78a8b022"
               link="link_to"
             />
             <MenuCategoryItem
               setCategory={setCategory}
               title="Cakes"
-              image="url_od_img"
+              icon="https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/cheesecake.png?alt=media&token=9dec89ba-1b48-4b6c-8990-7344aad072be"
+              link="link_to"
+            />
+            <MenuCategoryItem
+              setCategory={setCategory}
+              title="Muffins"
+              icon="https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/muffin.png?alt=media&token=4c5676ee-0dd1-44d6-9637-4521fe7413e2"
               link="link_to"
             />
           </div>

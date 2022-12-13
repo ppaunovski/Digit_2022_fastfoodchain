@@ -42,6 +42,10 @@ function MenuItems(props) {
     }
   }, [show]);
 
+  let filtered = menuItems.filter((item) =>
+    item.data().category.includes(props.category.toLowerCase())
+  );
+
   return (
     <article className=" w-full sm:w-[65vw]">
       <div className="w-full h-full">
@@ -50,10 +54,12 @@ function MenuItems(props) {
         </div>
         <div className="flex flex-col justify-center items-center">
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-evenly gap-5">
-            {menuItems && menuItems.map((item) => console.log(item.data()))}
+            {/* {menuItems &&
+              menuItems.map((item) => console.log(item.data().category))} */}
 
             {menuItems &&
-              menuItems.map((item) => {
+              filtered &&
+              filtered.map((item) => {
                 return (
                   <MenuCard
                     title={item.data().title}

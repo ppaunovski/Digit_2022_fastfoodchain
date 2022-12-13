@@ -42,7 +42,13 @@ export default function Modal({ props, count, setCount, modal, setModal }) {
           <p>{props.calories}</p>
           <p>${props.price}</p>
           <OrderCounter count={count} setCount={setCount} />
-          <div className="modal-action">
+          <div className="modal-action flex items-center justify-between">
+            <div>
+              <p>
+                <strong>Total: </strong>
+                <span>${Math.round(count * props.price * 100) / 100}</span>
+              </p>
+            </div>
             <label
               onClick={() => {
                 setModal(!modal);
