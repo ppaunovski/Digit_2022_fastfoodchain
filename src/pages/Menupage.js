@@ -19,11 +19,10 @@ function Menupage() {
   ];
   return (
     <div>
-      <section className="relative h-screen w-screen bg-blue-200 p-10 flex gap-10">
+      <section className="relative h-screen w-screen  p-10 flex gap-10">
         <MenuCategory setCategory={setCategory} />
         <MenuItems category={category} />
       </section>
-      <div style={{height: 1500}}></div>
     </div>
   );
 }
