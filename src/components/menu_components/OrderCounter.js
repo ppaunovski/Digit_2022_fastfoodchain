@@ -7,7 +7,7 @@ export default function ({ count, setCount }) {
       <button
         className="btn btn-square scale-[.65] text-2xl"
         onClick={() => {
-          if (count == 0) {
+          if (count == 1) {
             return;
           }
           setCount(count - 1);

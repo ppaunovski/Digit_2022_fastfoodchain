@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import OrderCounter from "./OrderCounter";
 
 function MenuCard(props) {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState(1);
   return (
     // <div
     //   className={
