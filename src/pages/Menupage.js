@@ -18,10 +18,13 @@ function Menupage() {
     { title: "Muffin", price: 50, image: "url" },
   ];
   return (
-    <section className="relative h-screen w-screen bg-blue-200 p-10 flex gap-10">
-      <MenuCategory setCategory={setCategory} />
-      <MenuItems category={category} />
-    </section>
+    <div>
+      <section className="relative h-screen w-screen bg-blue-200 p-10 flex gap-10">
+        <MenuCategory setCategory={setCategory} />
+        <MenuItems category={category} />
+      </section>
+      <div style={{height: 1500}}></div>
+    </div>
   );
 }
 

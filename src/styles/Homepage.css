@@ -1,0 +1,15 @@
+.MainImage {
+    -webkit-filter:brightness(50%);
+    transition-timing-function: ease-in;
+    transition: 0.5s;
+}
+
+.cardBody {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    font-size: 50px;
+    color: white;
+    background-color: black;
+    opacity: 50%;
+}

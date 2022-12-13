@@ -24,8 +24,8 @@ export default function Test() {
     return (
     <div className={"NavBarHidden " + (show && "NavBar") + " h-14 w-full"}>
         <ul className={"Menu inline-flex h-full"} style={{visibility: show ? "visible" : "hidden"}}>
-            <li>Home</li>
-            <li>Menu</li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/menu">Menu</a></li>
             <li>About</li>
             <li>Contact</li>
         </ul>
