@@ -62,6 +62,8 @@ function MenuItems(props) {
               filtered.map((item) => {
                 return (
                   <MenuCard
+                    key={item.id}
+                    id={item.id}
                     title={item.data().title}
                     image={item.data().image}
                     price={item.data().price}

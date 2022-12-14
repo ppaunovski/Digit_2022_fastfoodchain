@@ -1,7 +1,28 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import OrderCounter from "./OrderCounter";
+import { shoppingCartContext } from "../../pages/Menupage";
 
 export default function Modal({ props, count, setCount, modal, setModal }) {
+  const { cartItems, setCartItems } = useContext(shoppingCartContext);
+  const handleAddToCart = () => {
+    const cartItem = {
+      id: props.id,
+      item: props,
+      count: count,
+    };
+    let found = cartItems.findIndex((item) => item.id === cartItem.id);
+
+    console.log("FOUND", found);
+    if (found === -1) {
+      setCartItems([...cartItems, cartItem]);
+    } else {
+      //let newCartItems = cartItems.map((item) => item);
+      cartItems[found].count += cartItem.count;
+      //   console.log("new", newCartItems);
+      //   setCartItems(newCartItems);
+    }
+  };
+
   return (
     <div>
       <label htmlFor="my-modal-4"></label>
@@ -10,6 +31,7 @@ export default function Modal({ props, count, setCount, modal, setModal }) {
         checked={modal}
         id="my-modal-4"
         className="modal-toggle"
+        onChange={() => console.log("ch")}
       />
 
       <label htmlFor="my-modal-4" className="modal cursor-pointer">
@@ -53,6 +75,7 @@ export default function Modal({ props, count, setCount, modal, setModal }) {
               onClick={() => {
                 setModal(!modal);
                 setCount(1);
+                handleAddToCart();
               }}
               htmlFor="my-modal-4"
               className="btn"

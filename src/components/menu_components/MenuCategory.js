@@ -21,7 +21,7 @@ export default function MenuCategory({ setCategory }) {
   return (
     <aside className="hidden relative sm:w-[25vw] sm:block lg:w-[20vw]">
       <div className={style}>
-        <div className="flex flex-col items-center gap-6 border-solid border-black border-2 p-2">
+        <div className="flex flex-col items-center gap-6 shadow-2xl p-2">
           <div className="w-full h-[50px] bg-white flex justify-center items-center">
             <p className="text-2xl">Categories</p>
           </div>

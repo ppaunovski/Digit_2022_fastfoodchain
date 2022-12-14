@@ -1,11 +1,18 @@
-import React, { useState } from "react";
+import React, { createContext, useState } from "react";
 import { Link } from "react-router-dom";
+import CartAction from "../components/cart/CartAction";
 import MenuCard from "../components/menu_components/MenuCard";
 import MenuCategory from "../components/menu_components/MenuCategory";
 import MenuItems from "../components/menu_components/MenuItems";
 import data from "../json/menu.json";
 
+export const shoppingCartContext = createContext({
+  cartItems: [],
+  setCartItems: (value) => {},
+});
+
 function Menupage() {
+  const [cartItemsState, setCartItemsState] = useState([]);
   const [category, setCategory] = useState("Best sellers");
   const menuItems = [
     {
@@ -18,12 +25,15 @@ function Menupage() {
     { title: "Muffin", price: 50, image: "url" },
   ];
   return (
-    <div>
+    <shoppingCartContext.Provider
+      value={{ cartItems: cartItemsState, setCartItems: setCartItemsState }}
+    >
       <section className="relative h-screen w-screen  p-10 flex gap-10">
+        <CartAction />
         <MenuCategory setCategory={setCategory} />
         <MenuItems category={category} />
       </section>
-    </div>
+    </shoppingCartContext.Provider>
   );
 }
 
