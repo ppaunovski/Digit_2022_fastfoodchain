@@ -1,9 +1,10 @@
 .MainImage {
-    border-bottom-left-radius: 177px;
+    border-bottom-left-radius: 50px;
+    border-top-left-radius: 50px;
 }
 
 .TopDiv {
-
+    
 }
 
 .cardBody {
@@ -26,12 +27,6 @@
     transition: 0.5s;
 }
 
-.HomeCard:hover {
-    background-color: rosybrown;
-    transition-timing-function: ease-in;
-    transition: 0.5s;
-}
-
 .imgDiv {
     border-radius: 5px;
 }
@@ -40,6 +35,9 @@
     width: 20%;
     transition: 0.5s;
     transition-timing-function: ease-in;
+    margin-left: 15px;
+    height: 600px;
+    margin-top: 40px;
 }
 
 .HoveredSide {

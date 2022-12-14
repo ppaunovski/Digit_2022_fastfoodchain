@@ -1,0 +1,13 @@
+.HomeCardDiv {
+    padding: 11px;
+    transition: 0.5s;
+    transition-timing-function: ease-in;
+}
+
+.HomeCardDivHovered {
+    transition-timing-function: ease-in;
+    border-bottom-right-radius: 10px;
+
+    transition: 0.5s;
+    padding: 0px;
+}

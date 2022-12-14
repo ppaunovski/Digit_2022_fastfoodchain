@@ -1,13 +1,14 @@
 import React, { useEffect, useState } from "react";
 import Carousel from "../components/home_components/Carousel";
 import "../styles/Homepage.css"
-import MenuCard from "../components/menu_components/MenuCard";
+import HomeCard from "../components/home_components/HomeCard";
 
 function Homepage() {
   const [cardIsHovered, setCardIsHovered] = useState(false);
+  const [bigImgSrc, setBigImgSrc] = useState("https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/chocolate-cupcake.png?alt=media&token=dd6fa2fa-fea5-4a1e-83d9-7f5269532442");
 
   const controlScroll = () => {
-    let value = 100 - (window.scrollY / 8);
+    let value = 100 - (window.scrollY / 15);
 
     document.querySelector(".TopDiv").style.webkitFilter = "brightness(" + value + "%)";
     document.querySelector(".TopDiv").style.opacity = value + "%";
@@ -26,31 +27,28 @@ function Homepage() {
       <div className="TopDiv flex">
         <div className={"UnHoveredSide " + (cardIsHovered && "HoveredSide")}
           onMouseEnter={() => setCardIsHovered(true)} onMouseLeave={() => setCardIsHovered(false)}>
-          <div className="HomeCard w-11/12 h-1/3">
-          <MenuCard
-                    title={"Berry crepe"}
-                    // image={}
-                    // price={}
-                    // description={}
-                    // calories={}
-                  />
+          <div className="HomeCard w-11/12" style={{height: 180}}>
+            afdaf
           </div>
-          <div className="HomeCard w-11/12 h-1/3">
-            <div className="imgDiv w-full h-full">
-              <img className="w-full h-full block" src="https://images.immediate.co.uk/production/volatile/sites/30/2020/04/strawberry-cake-8c9a6b6-e1657200661127.jpg?quality=90&webp=true&resize=375,341" alt=""></img>
-            </div>
+          <div className="HomeCard w-11/12 ">
+            <HomeCard cardIsHovered={cardIsHovered} setBigImgSrc={setBigImgSrc} homeCardImg={"https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/chocolate-chip-cookie.png?alt=media&token=5c67c71e-1b02-4b54-a459-79144c70ac1f"}/>
           </div>
-          <div className="HomeCard w-11/12 h-1/3">
-            <div className="imgDiv w-full h-full">
-              <img className="w-full h-full block rounded-br-box" src="https://media.eggs.ca/assets/RecipePhotos/_resampled/FillWyIxMjgwIiwiNzIwIl0/Fluffy-Pancakes-New-CMS.jpg" alt=""></img>
-            </div>
+          <div className="HomeCard w-11/12 ">
+            <HomeCard cardIsHovered={cardIsHovered} setBigImgSrc={setBigImgSrc} homeCardImg={"https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/chocolate-cupcake.png?alt=media&token=dd6fa2fa-fea5-4a1e-83d9-7f5269532442"}/>
+          </div>
+          <div className="HomeCard w-11/12">
+            <HomeCard cardIsHovered={cardIsHovered} setBigImgSrc={setBigImgSrc} homeCardImg={"https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/chocolate-cake.png?alt=media&token=e907cde8-9a59-4755-aab4-c9679ddc6129"}/>
           </div>
         </div>
 
         <div className="w-full">
-          <div className="w-full bg-base-100 shadow-xl relative rounded-bl-full">
-            <img className="MainImage w-full h-fit" src="https://img-global.cpcdn.com/recipes/d1c923959141133b/1200x630cq70/photo.jpg" alt="Shoes" />
-            <div className="cardBody w-full h-44 flex rounded-bl-full justify-end">
+          <div className="relative text-right overflow-hidden pl-36 h-56">
+            <img className="h-64" src={"https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/sweetster.png?alt=media&token=6dba84bb-73dc-44d5-b9e6-b4dc676ea93f"} />
+          </div>
+
+          <div className="bg-base-100 shadow-xl relative" style={{borderBottomLeftRadius: 50, borderTopLeftRadius: 50, height: 540}}>
+            <img className="MainImage" src={bigImgSrc} alt="Shoes" />
+            <div className="cardBody w-full h-44 flex justify-end" style={{borderBottomLeftRadius: 50}}>
               <div className="flex flex-col justify-end relative">
                 <h1 className="mb-20">Check out our new muffin!</h1>
                 <button className="btn glass w-60 h-16 absolute right-1 bottom-3 opacity-50 hover:opacity-100 duration-500 bg-rose-900 rounded-box">
