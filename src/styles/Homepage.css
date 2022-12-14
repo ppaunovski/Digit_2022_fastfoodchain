@@ -1,15 +1,49 @@
 .MainImage {
-    -webkit-filter:brightness(50%);
-    transition-timing-function: ease-in;
-    transition: 0.5s;
+    border-bottom-left-radius: 177px;
+}
+
+.TopDiv {
+
 }
 
 .cardBody {
     position: absolute;
     bottom: 0;
     right: 0;
+    padding-right: 5px;
+    padding-bottom: 5px;
     font-size: 50px;
     color: white;
     background-color: black;
-    opacity: 50%;
+    background: rgba(184, 134, 92, 0.7);
+    transition-timing-function: ease-in;
+    transition: 0.5s;
+}
+
+.buttonHovered {
+    opacity: 100%;
+    transition-timing-function: ease-in;
+    transition: 0.5s;
+}
+
+.HomeCard:hover {
+    background-color: rosybrown;
+    transition-timing-function: ease-in;
+    transition: 0.5s;
+}
+
+.imgDiv {
+    border-radius: 5px;
+}
+
+.UnHoveredSide {
+    width: 20%;
+    transition: 0.5s;
+    transition-timing-function: ease-in;
+}
+
+.HoveredSide {
+    width: 25%;
+    transition: 0.5s;
+    transition-timing-function: ease-in;
 }
