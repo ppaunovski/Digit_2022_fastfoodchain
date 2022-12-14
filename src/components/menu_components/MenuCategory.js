@@ -23,7 +23,7 @@ export default function MenuCategory({ setCategory }) {
       <div className={style}>
         <div className="flex flex-col items-center gap-6 border-solid border-black border-2 p-2">
           <div className="w-full h-[50px] bg-white flex justify-center items-center">
-            <p>Categories</p>
+            <p className="text-2xl">Categories</p>
           </div>
           <div className="w-full flex flex-col gap-2">
             <MenuCategoryItem

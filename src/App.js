@@ -1,5 +1,5 @@
 import "./App.css";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Homepage from "./pages/Homepage";
 import Menupage from "./pages/Menupage";
 import NavigationBar from "./components/NavigationBar";
@@ -28,14 +28,14 @@ function App() {
 
   return (
     <ScrollContext.Provider value={show} className="App">
-      <NavigationBar />
-      <Router>
+      <BrowserRouter>
+        <NavigationBar />
         <Routes>
           <Route exact path="/" element={<Homepage />} />
           <Route path="/menu" element={<Menupage />} />
           <Route path="/menu/:whichMenu" element={<Menupage />} />
         </Routes>
-      </Router>
+      </BrowserRouter>
     </ScrollContext.Provider>
   );
 }
