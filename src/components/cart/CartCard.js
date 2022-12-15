@@ -66,7 +66,13 @@ function CartCard({ modal, setModal }) {
               Proceed
             </label>
           </div>
-          {proceed && <ProceedPayment />}
+          {proceed && (
+            <ProceedPayment
+              proceed={proceed}
+              setProceed={setProceed}
+              setModal={setModal}
+            />
+          )}
         </div>
       </div>
     </div>
