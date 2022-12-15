@@ -85,7 +85,7 @@ const StartPage = (props) => {
   const [state, changeState] = useState(false);
   const navigate = useNavigate();
   const { signInShow, setSignInShow } = useContext(signInShowContext);
-  if (window.localStorage.getItem("token").length !== 0) {
+  if (window.localStorage.getItem("token")) {
     console.log("IMA USERRRRRRRRRRRRRRRR");
   }
   useEffect(() => {

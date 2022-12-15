@@ -42,8 +42,7 @@ export default function Test(props) {
           </li>
           <li>About</li>
           <li>Contact</li>
-          {!props.isAuth &&
-          window.localStorage.getItem("token").length === 0 ? (
+          {!props.isAuth && !window.localStorage.getItem("token") ? (
             <li className="cursor-pointer" onClick={() => setSignInShow(true)}>
               Sign In
             </li>
@@ -62,13 +61,6 @@ export default function Test(props) {
             </li>
           )}
         </ul>
-
-        <Logout
-          logOutShow={logOutShow}
-          setLogOutShow={setLogOutShow}
-          db={db}
-          changeAuth={props.changeAuth}
-        />
 
         <SignInSignUp
           signInShow={signInShow}

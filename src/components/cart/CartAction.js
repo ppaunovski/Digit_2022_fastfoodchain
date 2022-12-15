@@ -17,7 +17,7 @@ export default function CartAction() {
     <div className="relative">
       <button
         onClick={() =>
-          window.localStorage.getItem("token").length !== 0
+          !window.localStorage.getItem("token")
             ? setModal(!modal)
             : setNotAuthModal(!notAuthModal)
         }
