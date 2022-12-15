@@ -4,6 +4,8 @@ import { ScrollContext, signInShowContext } from "../App";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import SignInSignUp from "../pages/SignInSignUp";
 import { db } from "../index.js";
+import FindUs from "../pages/FindUs";
+import { auth } from "../firebase.js";
 
 // export const signInShowContext = createContext({
 //   signInShow: false,
@@ -17,7 +19,8 @@ export default function Test(props) {
 
   const show = useContext(ScrollContext);
   const location = useLocation();
-  const [signInShow, setSignInShow] = useState(false);
+  const {signInShow, setSignInShow,logOutShow, setLogOutShow} = useContext(signInShowContext)
+  const [aboutShow, setAboutShow] = useState(false);
 
   return (
     <div>
@@ -62,6 +65,7 @@ export default function Test(props) {
           db={db}
           changeAuth={props.changeAuth}
         />
+        <FindUs aboutShow={aboutShow} setAboutShow={setAboutShow} />
       </div>
     </div>
   );
