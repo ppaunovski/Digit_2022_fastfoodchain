@@ -45,4 +45,18 @@
 .Menu > li:hover::after{
     width: 100%;
     left: 0;
-  }
+}
+
+.selectedNav {
+    background-color: #ba865c;
+}
+
+.selectedNav ::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 5px;
+    left: 0;
+    bottom:0;
+    background-color: #916a3a;
+}

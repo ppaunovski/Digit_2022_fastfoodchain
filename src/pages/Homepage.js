@@ -3,7 +3,7 @@ import Carousel from "../components/home_components/Carousel";
 import "../styles/Homepage.css"
 import HomeCard from "../components/home_components/HomeCard";
 
-function Homepage() {
+function Homepage(props) {
   const [cardIsHovered, setCardIsHovered] = useState(false);
   const [bigImgSrc, setBigImgSrc] = useState("https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/chocolate-cupcake.png?alt=media&token=dd6fa2fa-fea5-4a1e-83d9-7f5269532442");
 
@@ -28,7 +28,7 @@ function Homepage() {
         <div className={"UnHoveredSide " + (cardIsHovered && "HoveredSide")}
           onMouseEnter={() => setCardIsHovered(true)} onMouseLeave={() => setCardIsHovered(false)}>
           <div className="HomeCard w-11/12" style={{height: 180}}>
-            afdaf
+            {props.isAuth ? "Signed" : "Not Signed"}
           </div>
           <div className="HomeCard w-11/12 ">
             <HomeCard cardIsHovered={cardIsHovered} setBigImgSrc={setBigImgSrc} homeCardImg={"https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/chocolate-chip-cookie.png?alt=media&token=5c67c71e-1b02-4b54-a459-79144c70ac1f"}/>

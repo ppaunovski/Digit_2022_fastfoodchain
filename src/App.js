@@ -5,10 +5,13 @@ import Menupage from "./pages/Menupage";
 import NavigationBar from "./components/NavigationBar";
 import { createContext, useEffect, useState } from "react";
 
+
 export const ScrollContext = createContext(false);
+export const IsAuthenticated = createContext(false);
 
 function App() {
   const [show, setShow] = useState(true);
+  const [isAuth, changeAuth] = useState(false);
 
   const controlNavbar = () => {
     if (window.scrollY > 200) {
@@ -28,14 +31,16 @@ function App() {
 
   return (
     <ScrollContext.Provider value={show} className="App">
-      <BrowserRouter>
-        <NavigationBar />
-        <Routes>
-          <Route exact path="/" element={<Homepage />} />
-          <Route path="/menu" element={<Menupage />} />
-          <Route path="/menu/:whichMenu" element={<Menupage />} />
-        </Routes>
-      </BrowserRouter>
+      <IsAuthenticated.Provider value={isAuth}>
+        <BrowserRouter>
+          <NavigationBar isAuth={isAuth} changeAuth={changeAuth} />
+          <Routes>
+            <Route exact path="/" element={<Homepage isAuth={isAuth} />} />
+            <Route path="/menu" element={<Menupage />} />
+            <Route path="/menu/:whichMenu" element={<Menupage />} />
+          </Routes>
+        </BrowserRouter>
+      </IsAuthenticated.Provider>
     </ScrollContext.Provider>
   );
 }

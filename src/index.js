@@ -6,14 +6,14 @@ import reportWebVitals from "./reportWebVitals";
 import { initializeApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 
-initializeApp({
-  apiKey: process.env.REACT_APP_apiKey,
-  databaseURL: process.env.REACT_APP_databaseURL,
-  projectId: process.env.REACT_APP_projectId,
-  storageBucket: process.env.REACT_APP_storageBucket,
-  messagingSenderId: process.env.REACT_APP_messagingSenderId,
-  appId: process.env.REACT_APP_appId,
-});
+// initializeApp({
+//   apiKey: process.env.REACT_APP_apiKey,
+//   databaseURL: process.env.REACT_APP_databaseURL,
+//   projectId: process.env.REACT_APP_projectId,
+//   storageBucket: process.env.REACT_APP_storageBucket,
+//   messagingSenderId: process.env.REACT_APP_messagingSenderId,
+//   appId: process.env.REACT_APP_appId,
+// });
 
 export const db = getFirestore();
 
