@@ -4,19 +4,23 @@ import CartCard from "./CartCard";
 import InfoNumber from "./InfoNumber";
 import { IsAuthenticated } from "../../App";
 import { useNavigate } from "react-router-dom";
-import { signInShowContext } from "../NavigationBar";
+import { signInShowContext } from "../../App";
 
 export default function CartAction() {
   const [modal, setModal] = useState(false);
   const [notAuthModal, setNotAuthModal] = useState(false);
-  const isAuth = useContext(IsAuthenticated);
+  const { isAuth, changeAuth } = useContext(IsAuthenticated);
   const navigate = useNavigate();
-  const { signInShow, toggleSignInShow } = useContext(signInShowContext);
+  const { signInShow, setSignInShow } = useContext(signInShowContext);
 
   return (
     <div className="relative">
       <button
-        onClick={() => isAuth ? setModal(!modal) : setNotAuthModal(!notAuthModal)}
+        onClick={() =>
+          window.localStorage.getItem("token").length !== 0
+            ? setModal(!modal)
+            : setNotAuthModal(!notAuthModal)
+        }
         className="fixed z-20 top-24 right-20 btn btn-square btn-outline"
       >
         <svg
@@ -34,23 +38,41 @@ export default function CartAction() {
       </button>
       <CartCard modal={modal} setModal={setModal} />
 
-      <input type="checkbox" checked={notAuthModal} id="my-modal" className="modal-toggle" />
+      <input
+        type="checkbox"
+        checked={notAuthModal}
+        id="my-modal"
+        className="modal-toggle"
+      />
       <div className="modal">
         <div className="modal-box">
           <div className="flex relative">
             <h3 className="font-bold text-lg">Please sign in first :)</h3>
-            <h3 className="text-lg absolute right-2 cursor-pointer"
-                onClick={() => {
-                  setNotAuthModal(!notAuthModal);
-                }}>X</h3>
+            <h3
+              className="text-lg absolute right-2 cursor-pointer"
+              onClick={() => {
+                setNotAuthModal(!notAuthModal);
+              }}
+            >
+              X
+            </h3>
           </div>
-          <p className="py-4">To get an order you must first sign in.<br /><br />
-          If this is your first time, you can always create a new account.</p>
+          <p className="py-4">
+            To get an order you must first sign in.
+            <br />
+            <br />
+            If this is your first time, you can always create a new account.
+          </p>
           <div className="modal-action">
-            <label onClick={() => {
-              setNotAuthModal(!notAuthModal);
-              toggleSignInShow();
-            }} className="btn">Sign In!</label>
+            <label
+              onClick={() => {
+                setNotAuthModal(!notAuthModal);
+                setSignInShow(true);
+              }}
+              className="btn"
+            >
+              Sign In!
+            </label>
           </div>
         </div>
       </div>

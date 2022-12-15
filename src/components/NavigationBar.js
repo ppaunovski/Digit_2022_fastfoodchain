@@ -1,21 +1,39 @@
 import React, { createContext, useContext, useEffect, useState } from "react";
 import "../styles/NavigationBar.css";
-import { ScrollContext } from "../App";
+import { ScrollContext, signInShowContext } from "../App";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import SignInSignUp from "../pages/SignInSignUp";
 import { db } from "../index.js";
+import Logout from "../pages/Logout";
+import { auth } from "../firebase";
 
-export const signInShowContext = createContext(false);
+// export const signInShowContext = createContext({
+//   signInShow: false,
+//   setSignInShow: (value) => {},
+// });
 
 export default function Test(props) {
+  const logout = async () => {
+    await auth.signOut();
+  };
+
   const show = useContext(ScrollContext);
   const location = useLocation();
-  const [signInShow, setSignInShow] = useState(false);
+  const { signInShow, setSignInShow, logOutShow, setLogOutShow } =
+    useContext(signInShowContext);
+
+  useEffect(() => {
+    setSignInShow(!signInShow);
+  }, [logOutShow]);
+  //const [signInShow, setSignInShow] = useState(false);
 
   return (
-    <signInShowContext.Provider value={{signInShow, setSignInShow}}>
+    <div>
       <div className={"NavBarHidden " + (show && "NavBar") + " h-14 w-full"}>
-        <ul className={"Menu inline-flex h-full"} style={{ visibility: show ? "visible" : "hidden" }}>
+        <ul
+          className={"Menu inline-flex h-full"}
+          style={{ visibility: show ? "visible" : "hidden" }}
+        >
           <li className={location.pathname == "/" ? "selectedNav" : ""}>
             <NavLink to="/">Home</NavLink>
           </li>
@@ -24,15 +42,41 @@ export default function Test(props) {
           </li>
           <li>About</li>
           <li>Contact</li>
-          {!props.isAuth ? (
+          {!props.isAuth &&
+          window.localStorage.getItem("token").length === 0 ? (
             <li className="cursor-pointer" onClick={() => setSignInShow(true)}>
               Sign In
             </li>
-          ) : ""}
+          ) : (
+            <li
+              onClick={() => {
+                window.localStorage.setItem("token", "");
+                window.localStorage.setItem("name", "");
+                window.localStorage.setItem("username", "");
+                window.localStorage.setItem("surname", "");
+                setLogOutShow(!logOutShow);
+                logout();
+              }}
+            >
+              Log out
+            </li>
+          )}
         </ul>
 
-        <SignInSignUp signInShow={signInShow} setSignInShow={setSignInShow} db={db} changeAuth={props.changeAuth} />
+        <Logout
+          logOutShow={logOutShow}
+          setLogOutShow={setLogOutShow}
+          db={db}
+          changeAuth={props.changeAuth}
+        />
+
+        <SignInSignUp
+          signInShow={signInShow}
+          setSignInShow={setSignInShow}
+          db={db}
+          changeAuth={props.changeAuth}
+        />
       </div>
-    </signInShowContext.Provider>
+    </div>
   );
 }
