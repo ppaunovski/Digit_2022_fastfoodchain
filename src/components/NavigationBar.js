@@ -4,8 +4,6 @@ import { ScrollContext, signInShowContext } from "../App";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import SignInSignUp from "../pages/SignInSignUp";
 import { db } from "../index.js";
-import Logout from "../pages/Logout";
-import { auth } from "../firebase";
 
 // export const signInShowContext = createContext({
 //   signInShow: false,
@@ -19,13 +17,7 @@ export default function Test(props) {
 
   const show = useContext(ScrollContext);
   const location = useLocation();
-  const { signInShow, setSignInShow, logOutShow, setLogOutShow } =
-    useContext(signInShowContext);
-
-  useEffect(() => {
-    setSignInShow(!signInShow);
-  }, [logOutShow]);
-  //const [signInShow, setSignInShow] = useState(false);
+  const [signInShow, setSignInShow] = useState(false);
 
   return (
     <div>
@@ -40,7 +32,9 @@ export default function Test(props) {
           <li className={location.pathname == "/menu" ? "selectedNav" : ""}>
             <NavLink to="/menu">Menu</NavLink>
           </li>
-          <li>About</li>
+          <li className="cursor-pointer" onClick={() => setAboutShow(true)}>
+            About
+          </li>
           <li>Contact</li>
           {!props.isAuth && !window.localStorage.getItem("token") ? (
             <li className="cursor-pointer" onClick={() => setSignInShow(true)}>
