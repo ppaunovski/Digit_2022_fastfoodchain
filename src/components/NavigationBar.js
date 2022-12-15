@@ -4,6 +4,7 @@ import { ScrollContext } from "../App";
 import { Link, NavLink, useLocation } from "react-router-dom";
 import SignInSignUp from "../pages/SignInSignUp";
 import { db } from "../index.js";
+import FindUs from "../pages/FindUs";
 
 export const signInShowContext = createContext(false);
 
@@ -11,6 +12,7 @@ export default function Test(props) {
   const show = useContext(ScrollContext);
   const location = useLocation();
   const [signInShow, setSignInShow] = useState(false);
+  const [aboutShow, setAboutShow] = useState(false);
 
   return (
     <signInShowContext.Provider value={{signInShow, setSignInShow}}>
@@ -22,7 +24,9 @@ export default function Test(props) {
           <li className={location.pathname == "/menu" ? "selectedNav" : ""}>
             <NavLink to="/menu">Menu</NavLink>
           </li>
-          <li>About</li>
+          <li className="cursor-pointer" onClick={() => setAboutShow(true)}>
+            About
+          </li>
           <li>Contact</li>
           {!props.isAuth ? (
             <li className="cursor-pointer" onClick={() => setSignInShow(true)}>
@@ -32,6 +36,7 @@ export default function Test(props) {
         </ul>
 
         <SignInSignUp signInShow={signInShow} setSignInShow={setSignInShow} db={db} changeAuth={props.changeAuth} />
+        <FindUs aboutShow={aboutShow} setAboutShow={setAboutShow} />
       </div>
     </signInShowContext.Provider>
   );
