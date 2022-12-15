@@ -27,17 +27,17 @@ function Homepage(props) {
       <div className="TopDiv flex">
         <div className={"UnHoveredSide " + (cardIsHovered && "HoveredSide")}
           onMouseEnter={() => setCardIsHovered(true)} onMouseLeave={() => setCardIsHovered(false)}>
-          <div className="HomeCard w-11/12" style={{height: 180}}>
-            {props.isAuth ? "Signed" : "Not Signed"}
+          <div className="HomeCard w-11/12 ">
+            <HomeCard title={"Pancake"} cardIsHovered={cardIsHovered} setBigImgSrc={setBigImgSrc} homeCardImg={"https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/22180-waffles-mfs-80-e198bfc72b4846a8804309245f1ece54-removebg-preview.png?alt=media&token=7478a9d2-d331-4720-8fd8-6d1082bf7783"}/>
           </div>
           <div className="HomeCard w-11/12 ">
-            <HomeCard cardIsHovered={cardIsHovered} setBigImgSrc={setBigImgSrc} homeCardImg={"https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/chocolate-chip-cookie.png?alt=media&token=5c67c71e-1b02-4b54-a459-79144c70ac1f"}/>
+            <HomeCard title={"Cookies"} cardIsHovered={cardIsHovered} setBigImgSrc={setBigImgSrc} homeCardImg={"https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/chocolate-chip-cookie.png?alt=media&token=5c67c71e-1b02-4b54-a459-79144c70ac1f"}/>
           </div>
           <div className="HomeCard w-11/12 ">
-            <HomeCard cardIsHovered={cardIsHovered} setBigImgSrc={setBigImgSrc} homeCardImg={"https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/chocolate-cupcake.png?alt=media&token=dd6fa2fa-fea5-4a1e-83d9-7f5269532442"}/>
+            <HomeCard title={"Muffins"} cardIsHovered={cardIsHovered} setBigImgSrc={setBigImgSrc} homeCardImg={"https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/chocolate-cupcake.png?alt=media&token=dd6fa2fa-fea5-4a1e-83d9-7f5269532442"}/>
           </div>
           <div className="HomeCard w-11/12">
-            <HomeCard cardIsHovered={cardIsHovered} setBigImgSrc={setBigImgSrc} homeCardImg={"https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/chocolate-cake.png?alt=media&token=e907cde8-9a59-4755-aab4-c9679ddc6129"}/>
+            <HomeCard title={"Cake"} cardIsHovered={cardIsHovered} setBigImgSrc={setBigImgSrc} homeCardImg={"https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/chocolate-cake.png?alt=media&token=e907cde8-9a59-4755-aab4-c9679ddc6129"}/>
           </div>
         </div>
 
@@ -63,7 +63,6 @@ function Homepage(props) {
       <div className="flex w-full text-center">
         <Carousel />
       </div>
-      <p>Tastiest sweets in town</p>
     </div>
   );
 }

@@ -32,7 +32,7 @@
 }
 
 .UnHoveredSide {
-    width: 20%;
+    width: 15%;
     transition: 0.5s;
     transition-timing-function: ease-in;
     margin-left: 15px;
@@ -41,7 +41,7 @@
 }
 
 .HoveredSide {
-    width: 25%;
+    width: 20%;
     transition: 0.5s;
     transition-timing-function: ease-in;
 }

@@ -8,7 +8,7 @@ function HomeCard(props) {
                 onClick={() => props.setBigImgSrc(props.homeCardImg)}>
                 <figure className="w-full bg-white"><img className="w-full h-full" src={props.homeCardImg} alt="Shoes" /></figure>
                 <div className={"HomeCardDiv " + (props.cardIsHovered && "HomeCardDivHovered") + " w-1/8 relative text-center"}>
-                    <h2>Cake</h2>
+                    <h2 className="font-bold">{props.title}</h2>
                 </div>
             </div>
         </div>
