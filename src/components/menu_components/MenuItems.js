@@ -6,6 +6,7 @@ import chocolateCake from "../../images/chocolate-cake.png";
 // import { useGetData } from "../../hooks/useGetData";
 import { db } from "../../index.js";
 import { doc, getDocs, collection, query, where } from "firebase/firestore";
+import Searchbar from "./Searchbar";
 
 function MenuItems(props) {
   const [menuItems, setMenuItems] = useState([]);
@@ -42,36 +43,66 @@ function MenuItems(props) {
     }
   }, [show]);
 
-  let filtered = menuItems.filter((item) =>
-    item.data().category.includes(props.category.toLowerCase())
-  );
+  let filtered;
+
+  // useEffect(() => {
+  //   if (props.search !== "") {
+  //     filtered = menuItems.filter((item) =>
+  //       item.data().title.toLowerCase().includes(props.search.toLowerCase())
+  //     );
+  //   } else {
+
+  //   }
+  //   console.log("FILTERED", filtered);
+  // }, [props.search, props.category]);
+
+  if (props.search !== "") {
+    props.setCategory("Search");
+    filtered = menuItems.filter((item) =>
+      item.data().title.toLowerCase().includes(props.search.toLowerCase())
+    );
+  } else {
+    filtered = menuItems.filter((item) =>
+      item.data().category.includes(props.category.toLowerCase())
+    );
+  }
 
   return (
-    <article className=" w-full sm:w-[65vw]">
-      <div className="w-full h-full">
-        <div className={style}>
-          <h1 className="text-center mb-5 text-3xl p-5">{props.category}</h1>
+    <article className=" w-full sm:w-[65vw] ">
+      {/* <div className="fixed flex justify-center top-20 w-full">
+        <div className="flex w-full justify-center">
+          <h1 className="">{props.category}</h1>
         </div>
-        <div className="flex flex-col justify-center items-center">
-          <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 justify-evenly gap-5">
-            {/* {menuItems &&
+      </div> */}
+
+      <div className="w-full h-full flex justify-center">
+        <div className="fixed flex justify-center top-16 bg-white z-20 h-16 w-full">
+          <div className="flex w-full justify-center items-center">
+            <h1 className="text-3xl">{props.category}</h1>
+          </div>
+        </div>
+        <div className="w-full flex justify-center">
+          <div className="absolute top-5 sm:relative flex flex-col sm:justify-top items-center">
+            <div className="grid grid-cols-1  md:grid-cols-2 xl:grid-cols-3 justify-evenly gap-5">
+              {/* {menuItems &&
               menuItems.map((item) => console.log(item.data().category))} */}
 
-            {menuItems &&
-              filtered &&
-              filtered.map((item) => {
-                return (
-                  <MenuCard
-                    key={item.id}
-                    id={item.id}
-                    title={item.data().title}
-                    image={item.data().image}
-                    price={item.data().price}
-                    description={item.data().description}
-                    calories={item.data().calories}
-                  />
-                );
-              })}
+              {menuItems &&
+                filtered &&
+                filtered.map((item) => {
+                  return (
+                    <MenuCard
+                      key={item.id}
+                      id={item.id}
+                      title={item.data().title}
+                      image={item.data().image}
+                      price={item.data().price}
+                      description={item.data().description}
+                      calories={item.data().calories}
+                    />
+                  );
+                })}
+            </div>
           </div>
         </div>
       </div>

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { shoppingCartContext } from "../../pages/Menupage";
 import OrderedItem from "./OrderedItem";
 import ProceedPayment from "./ProceedPayment";
+import "../../styles/Buttons.css";
 
 function CartCard({ modal, setModal }) {
   const { cartItems, setCartItems } = useContext(shoppingCartContext);
@@ -25,7 +26,7 @@ function CartCard({ modal, setModal }) {
               setModal(!modal);
               setProceed(false);
             }}
-            className="btn btn-circle btn-outline"
+            className="btn btn-circle btn-outline pinkButtonOutline"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -61,7 +62,7 @@ function CartCard({ modal, setModal }) {
                 //setModal(!modal);
               }}
               htmlFor="my-modal-6"
-              className="btn"
+              className="btn pinkButton transition-all duration-200 tracking-widest ease-in-out"
             >
               Proceed
             </label>

@@ -3,6 +3,7 @@ import { shoppingCartContext } from "../../pages/Menupage";
 import FinalModal from "./FinalModal";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../index";
+import "../../styles/Buttons.css";
 
 function ProceedPayment({ proceed, setProceed, setModal }) {
   const [finalModal, setFinalModal] = useState(false);
@@ -42,7 +43,7 @@ function ProceedPayment({ proceed, setProceed, setModal }) {
             />
           </div>
           <button
-            className="btn"
+            className="btn pinkButton"
             onClick={() => {
               setFinalModal(true);
               //setProceed(false);

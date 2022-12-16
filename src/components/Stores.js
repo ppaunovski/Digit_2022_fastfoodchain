@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/Buttons.css";
 
 function Stores() {
   return (
@@ -12,7 +13,7 @@ function Stores() {
       <div className="absolute flex justify-center items-center -z-30 w-full h-full bg">
         <div className="absolute  h-[8vh] w-full bg-pink-500/60 bottom-0"></div>
       </div>
-      <div className="carousel w-full">
+      <div className="carousel w-full snap-mandatory">
         <div
           id="slide1"
           className="carousel-item flex items-center justify-center relative w-full"
@@ -22,10 +23,10 @@ function Stores() {
             className="w-[80vw] lg:w-[65vw] xl:w-[50vw]"
           />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide4" className="btn btn-circle">
+            <a href="#slide4" className="pinkButton btn btn-circle">
               ❮
             </a>
-            <a href="#slide2" className="btn btn-circle">
+            <a href="#slide2" className="pinkButton btn btn-circle">
               ❯
             </a>
           </div>
@@ -39,10 +40,10 @@ function Stores() {
             className="w-[80vw] lg:w-[65vw] xl:w-[50vw]"
           />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide1" className="btn btn-circle">
+            <a href="#slide1" className="pinkButton btn btn-circle">
               ❮
             </a>
-            <a href="#slide3" className="btn btn-circle">
+            <a href="#slide3" className="pinkButton btn btn-circle">
               ❯
             </a>
           </div>
@@ -56,10 +57,10 @@ function Stores() {
             className="w-[80vw] lg:w-[65vw] xl:w-[50vw]"
           />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide2" className="btn btn-circle">
+            <a href="#slide2" className="pinkButton btn btn-circle">
               ❮
             </a>
-            <a href="#slide4" className="btn btn-circle">
+            <a href="#slide4" className="pinkButton btn btn-circle">
               ❯
             </a>
           </div>
@@ -73,10 +74,10 @@ function Stores() {
             className="w-[80vw] lg:w-[65vw] xl:w-[50vw]"
           />
           <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">
-            <a href="#slide3" className="btn btn-circle">
+            <a href="#slide3" className="pinkButton btn btn-circle">
               ❮
             </a>
-            <a href="#slide1" className="btn btn-circle">
+            <a href="#slide1" className="pinkButton btn btn-circle">
               ❯
             </a>
           </div>

@@ -4,6 +4,7 @@ import Homepage from "./pages/Homepage";
 import Menupage from "./pages/Menupage";
 import NavigationBar from "./components/NavigationBar";
 import { createContext, useEffect, useState } from "react";
+import MenuItems from "./components/menu_components/MenuItems";
 
 export const ScrollContext = createContext(false);
 export const IsAuthenticated = createContext({
@@ -53,7 +54,7 @@ function App() {
             <Routes>
               <Route exact path="/" element={<Homepage isAuth={isAuth} />} />
               <Route path="/menu" element={<Menupage />} />
-              <Route path="/menu/:whichMenu" element={<Menupage />} />
+              <Route path="/menu/:category" element={<Menupage />} />
             </Routes>
           </BrowserRouter>
         </IsAuthenticated.Provider>

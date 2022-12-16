@@ -5,6 +5,7 @@ import InfoNumber from "./InfoNumber";
 import { IsAuthenticated } from "../../App";
 import { useNavigate } from "react-router-dom";
 import { signInShowContext } from "../../App";
+import "../../styles/Buttons.css";
 
 export default function CartAction() {
   const [modal, setModal] = useState(false);
@@ -21,7 +22,7 @@ export default function CartAction() {
             ? setModal(!modal)
             : setNotAuthModal(!notAuthModal)
         }
-        className="fixed z-20 top-24 right-20 btn btn-square btn-outline"
+        className="pinkButtonOutline fixed z-20 top-24 right-10 btn btn-square btn-outline"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
