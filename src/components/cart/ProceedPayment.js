@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { shoppingCartContext } from "../../pages/Menupage";
+import { shoppingCartContext } from "../../App";
 import FinalModal from "./FinalModal";
 import { doc, updateDoc } from "firebase/firestore";
 import { db } from "../../index";

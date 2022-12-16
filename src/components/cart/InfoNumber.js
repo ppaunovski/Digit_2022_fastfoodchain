@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { shoppingCartContext } from "../../pages/Menupage";
+import { shoppingCartContext } from "../../App";
 
 function InfoNumber() {
   const { cartItems, setCartItems } = useContext(shoppingCartContext);

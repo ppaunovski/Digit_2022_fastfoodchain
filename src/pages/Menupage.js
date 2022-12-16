@@ -6,13 +6,7 @@ import MenuCategory from "../components/menu_components/MenuCategory";
 import MenuItems from "../components/menu_components/MenuItems";
 import data from "../json/menu.json";
 
-export const shoppingCartContext = createContext({
-  cartItems: [],
-  setCartItems: (value) => {},
-});
-
 function Menupage() {
-  const [cartItemsState, setCartItemsState] = useState([]);
   const [category, setCategory] = useState("");
   const [search, setSearch] = useState("");
   const location = useLocation();
@@ -47,10 +41,8 @@ function Menupage() {
   }, [screenWidth]);
 
   return (
-    <shoppingCartContext.Provider
-      value={{ cartItems: cartItemsState, setCartItems: setCartItemsState }}
-    >
-      <section className="relative z-0 h-screen w-screen mt-16  p-10 flex gap-10">
+    <div>
+      <section className="relative z-40 overflow-x-hidden h-screen w-screen mt-16  p-10 flex gap-10">
         {screenWidth >= 640 ? (
           <div className="relative h-screen w-screen  p-10 flex gap-10">
             <MenuCategory
@@ -95,7 +87,7 @@ function Menupage() {
           </div>
         )}
       </section>
-    </shoppingCartContext.Provider>
+    </div>
   );
 }
 

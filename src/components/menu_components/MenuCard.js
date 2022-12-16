@@ -18,7 +18,7 @@ function MenuCard(props) {
     //   <p>{props.title}</p>
     // </div>
 
-    <div className="group relative card card-compact w-56 bg-base-100 shadow-xl m-1">
+    <div className=" group relative card card-compact w-56 bg-base-100 shadow-xl m-1">
       <div
         onClick={() => setModal(!modal)}
         className="hidden transition-all ease-in-out duration-1000 group-hover:cursor-pointer group-hover:flex justify-center items-center text-white w-full h-full rounded-xl bg-black/30 absolute"

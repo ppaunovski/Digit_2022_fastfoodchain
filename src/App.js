@@ -6,6 +6,11 @@ import NavigationBar from "./components/NavigationBar";
 import { createContext, useEffect, useState } from "react";
 import MenuItems from "./components/menu_components/MenuItems";
 
+export const shoppingCartContext = createContext({
+  cartItems: [],
+  setCartItems: (value) => {},
+});
+
 export const ScrollContext = createContext(false);
 export const IsAuthenticated = createContext({
   isAuth: false,
@@ -24,6 +29,7 @@ function App() {
   const [isAuth, changeAuth] = useState(false);
   const [signInShow, setSignInShow] = useState(false);
   const [logOutShow, setLogOutShow] = useState(false);
+  const [cartItemsState, setCartItemsState] = useState([]);
 
   const controlNavbar = () => {
     if (window.scrollY > 200) {
@@ -49,14 +55,21 @@ function App() {
         <IsAuthenticated.Provider
           value={{ isAuth: isAuth, changeAuth: changeAuth }}
         >
-          <BrowserRouter>
-            <NavigationBar isAuth={isAuth} changeAuth={changeAuth} />
-            <Routes>
-              <Route exact path="/" element={<Homepage isAuth={isAuth} />} />
-              <Route path="/menu" element={<Menupage />} />
-              <Route path="/menu/:category" element={<Menupage />} />
-            </Routes>
-          </BrowserRouter>
+          <shoppingCartContext.Provider
+            value={{
+              cartItems: cartItemsState,
+              setCartItems: setCartItemsState,
+            }}
+          >
+            <BrowserRouter>
+              <NavigationBar isAuth={isAuth} changeAuth={changeAuth} />
+              <Routes>
+                <Route exact path="/" element={<Homepage isAuth={isAuth} />} />
+                <Route path="/menu" element={<Menupage />} />
+                <Route path="/menu/:category" element={<Menupage />} />
+              </Routes>
+            </BrowserRouter>
+          </shoppingCartContext.Provider>
         </IsAuthenticated.Provider>
       </signInShowContext.Provider>
     </ScrollContext.Provider>
