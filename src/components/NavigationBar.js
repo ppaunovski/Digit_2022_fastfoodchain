@@ -6,6 +6,7 @@ import SignInSignUp from "../pages/SignInSignUp";
 import { db } from "../index.js";
 import FindUs from "../pages/FindUs";
 import { auth } from "../firebase.js";
+import Contact from "../pages/Contact";
 
 // export const signInShowContext = createContext({
 //   signInShow: false,
@@ -21,6 +22,7 @@ export default function Test(props) {
   const location = useLocation();
   const {signInShow, setSignInShow,logOutShow, setLogOutShow} = useContext(signInShowContext)
   const [aboutShow, setAboutShow] = useState(false);
+  const [showContact, setShowContact] = useState(false);
 
   return (
     <div>
@@ -38,7 +40,9 @@ export default function Test(props) {
           <li className="cursor-pointer" onClick={() => setAboutShow(true)}>
             About
           </li>
-          <li>Contact</li>
+          <li className = "cursor-pointer" onClick = {() => setShowContact(true)}>
+            Contact
+            </li>
           {!props.isAuth && !window.localStorage.getItem("token") ? (
             <li className="cursor-pointer" onClick={() => setSignInShow(true)}>
               Sign In
@@ -66,6 +70,7 @@ export default function Test(props) {
           changeAuth={props.changeAuth}
         />
         <FindUs aboutShow={aboutShow} setAboutShow={setAboutShow} />
+        <Contact showContact = {showContact} setShowContact={setShowContact}></Contact>
       </div>
     </div>
   );
