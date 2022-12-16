@@ -87,17 +87,17 @@ function Sidebar() {
                 src="https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/sweetster.png?alt=media&token=6dba84bb-73dc-44d5-b9e6-b4dc676ea93f"
                 className="w-[500px]"
               ></img>
-              <p className="text-black text-center  p-3 -mt-7 sm:text-xl">
-                Lorem Ipsum is simply dummy text of the printing and typesetting
-                industry. Lorem Ipsum has been the industry's standard dummy
-                text ever since the 1500s, when an unknown printer took a galley
-                of type and scrambled it to make a type specimen book. It has
-                survived not only five centuries, but also the leap into
-                electronic typesetting, remaining essentially unchanged. It was
-                popularised in the 1960s with the release of Letraset sheets
-                containing Lorem Ipsum passages, and more recently with desktop
-                publishing software like Aldus PageMaker including versions of
-                Lorem Ipsum.
+              <p className="text-black text-center  p-3 -mt-7 sm:text-xl font-mono">
+                You may think to your self how can life get even more sweeter, well search no more, for you have uncovered the best 
+                chain of sweet-stores, this side of the Planet. Our age old formula, loving and caring staff tirelessly work day in and day out to
+                ensure our age old legacy lives on even in this digital age. And to celebrate our golden jubilee we are promoting a sale on all things sweet, p. s.
+                theres a lot! So order now while it's still fresh.
+              </p>
+              <br>
+              </br>
+              <p className="text-black text-left  p-3 -mt-7 sm:text-xl font-mono">
+                And for those old schooled aficianados, check out our numerous physical locations all over town, just look at the contact information or scroll 
+                to the maps below!
               </p>
             </div>
           </div>
