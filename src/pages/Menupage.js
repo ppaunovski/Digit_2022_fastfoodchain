@@ -1,6 +1,7 @@
 import React, { createContext, useEffect, useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import CartAction from "../components/cart/CartAction";
+import Footer from "../components/Footer";
 import MenuCard from "../components/menu_components/MenuCard";
 import MenuCategory from "../components/menu_components/MenuCategory";
 import MenuItems from "../components/menu_components/MenuItems";
@@ -40,8 +41,17 @@ function Menupage() {
     window.addEventListener("resize", handleResize);
   }, [screenWidth]);
 
+  useEffect(() => {
+    if (search === "") {
+      setCategory("Best sellers");
+    }
+  }, [search]);
+
   return (
     <div>
+      {/* <div className="absolute flex justify-center items-center -z-40 w-full h-full ">
+        <div className="absolute -z-20  h-[30vh] rotate-[39deg] sm:rotate-[30deg] md:rotate-[24deg] lg:rotate-[14deg] w-[2000px] bg-pink-200"></div>
+      </div> */}
       <section className="relative z-40 overflow-x-hidden h-screen w-screen mt-16  p-10 flex gap-10">
         {screenWidth >= 640 ? (
           <div className="relative h-screen w-screen  p-10 flex gap-10">

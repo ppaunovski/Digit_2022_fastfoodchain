@@ -72,10 +72,16 @@ export default function Test(props) {
               <img src="https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/7-70496_bow-tie-drawing-ribbon-clip-art-clipart-hair(3).png?alt=media&token=9fb222f9-73f5-4649-973a-c68822465ee9"></img>
             </div>
           </div>
-          <div className="cursor-pointer text-white" onClick={() => setAboutShow(true)}>
-            About
+          <div
+            className="cursor-pointer text-white"
+            onClick={() => setAboutShow(true)}
+          >
+            Find Us
           </div>
-          <div className="cursor-pointer text-white" onClick={() => setShowContact(true)}>
+          <div
+            className="cursor-pointer text-white"
+            onClick={() => setShowContact(true)}
+          >
             Contact
           </div>
           {!props.isAuth && !window.localStorage.getItem("token") ? (
@@ -94,11 +100,12 @@ export default function Test(props) {
                 window.localStorage.setItem("username", "");
                 window.localStorage.setItem("surname", "");
                 setLogOutShow(!logOutShow);
-                props.changeAuth(!props.isAuth);
+                props.changeAuth(false);
                 logout();
               }}
             >
-              Logged in as {localStorage.getItem("name")}<br></br>
+              Logged in as {localStorage.getItem("name")}
+              <br></br>
               Log out
             </div>
           )}
