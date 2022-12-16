@@ -1,6 +1,7 @@
 import React, { useContext, useState } from "react";
 import OrderCounter from "./OrderCounter";
 import { shoppingCartContext } from "../../pages/Menupage";
+import "../../styles/Buttons.css";
 
 export default function Modal({ props, count, setCount, modal, setModal }) {
   const { cartItems, setCartItems } = useContext(shoppingCartContext);
@@ -41,7 +42,7 @@ export default function Modal({ props, count, setCount, modal, setModal }) {
               setModal(!modal);
               setCount(1);
             }}
-            className="btn btn-circle btn-outline"
+            className="btn btn-circle btn-outline pinkButtonOutline"
           >
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -78,7 +79,7 @@ export default function Modal({ props, count, setCount, modal, setModal }) {
                 handleAddToCart();
               }}
               htmlFor="my-modal-4"
-              className="btn"
+              className="btn pinkButton"
             >
               Add to cart
             </label>

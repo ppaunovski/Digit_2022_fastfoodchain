@@ -1,11 +1,12 @@
 import React, { useState } from "react";
+import "../../styles/Buttons.css";
 
 export default function ({ count, setCount }) {
   //const [count, setCount] = useState(0);
   return (
     <div>
       <button
-        className="btn btn-square scale-[.65] text-2xl"
+        className="btn btn-square pinkButton scale-[.65] text-2xl"
         onClick={() => {
           if (count == 1) {
             return;
@@ -17,7 +18,7 @@ export default function ({ count, setCount }) {
       </button>
       <span>{count}</span>
       <button
-        className="btn btn-square scale-[.65] text-2xl"
+        className="btn btn-square pinkButton scale-[.65] text-2xl"
         onClick={() => setCount(count + 1)}
       >
         +

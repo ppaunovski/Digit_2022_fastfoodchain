@@ -50,7 +50,7 @@ function Menupage() {
     <shoppingCartContext.Provider
       value={{ cartItems: cartItemsState, setCartItems: setCartItemsState }}
     >
-      <section className="relative h-screen w-screen mt-16  p-10 flex gap-10">
+      <section className="relative z-0 h-screen w-screen mt-16  p-10 flex gap-10">
         {screenWidth >= 640 ? (
           <div className="relative h-screen w-screen  p-10 flex gap-10">
             <MenuCategory

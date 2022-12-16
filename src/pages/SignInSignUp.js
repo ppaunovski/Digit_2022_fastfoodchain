@@ -101,7 +101,7 @@ const StartPage = (props) => {
             type="checkbox"
             checked={props.signInShow}
             id="my-modal"
-            className="modal-toggle"
+            className="modal-toggle "
           />
           <div className="modal">
             <div className="modal-box relative">
