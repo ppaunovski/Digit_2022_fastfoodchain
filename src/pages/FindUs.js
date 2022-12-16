@@ -14,7 +14,7 @@ export default function FindUs(props) {
             <div className="modal">
                 <div className="modal-box relative" style={{height: 900, maxWidth: 1000, width: 900,}}>
                     <h1 className="absolute right-10 top-5 cursor-pointer" onClick={() => props.setAboutShow(false)}>X</h1>
-                    <div className="pb-3">
+                    <div className="pb-3 text-center">
                         <h1>Map</h1>
                     </div>
                     <div className="overflow-hidden relative w-full" style={{height: "95%"}}>

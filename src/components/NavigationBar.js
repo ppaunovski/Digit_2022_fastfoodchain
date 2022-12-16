@@ -72,10 +72,10 @@ export default function Test(props) {
               <img src="https://firebasestorage.googleapis.com/v0/b/digit-2022.appspot.com/o/7-70496_bow-tie-drawing-ribbon-clip-art-clipart-hair(3).png?alt=media&token=9fb222f9-73f5-4649-973a-c68822465ee9"></img>
             </div>
           </div>
-          <div className="cursor-pointer" onClick={() => setAboutShow(true)}>
+          <div className="cursor-pointer text-white" onClick={() => setAboutShow(true)}>
             About
           </div>
-          <div className="cursor-pointer" onClick={() => setShowContact(true)}>
+          <div className="cursor-pointer text-white" onClick={() => setShowContact(true)}>
             Contact
           </div>
           {!props.isAuth && !window.localStorage.getItem("token") ? (
