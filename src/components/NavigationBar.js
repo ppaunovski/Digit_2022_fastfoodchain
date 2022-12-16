@@ -34,7 +34,7 @@ export default function Test(props) {
   return (
     <div>
       <div
-        className="bg-[#F391C2] h-16 fixed right-0  w-full z-10 top-0"
+        className="bg-[#F391C2] h-16 fixed right-0  w-full z-50 top-0"
         //className={"NavBarHidden " + (show && "NavBar") + " h-14 w-full"}
       >
         <div
@@ -42,7 +42,7 @@ export default function Test(props) {
           //className={"Menu inline-flex h-full"}
           //style={{ visibility: show ? "visible" : "hidden" }}
         >
-          <div className={(location.pathname == "/" ? "relative" : "")}>
+          <div className={location.pathname == "/" ? "relative" : ""}>
             <NavLink to="/" className="text-white">
               Home
             </NavLink>

@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { shoppingCartContext } from "../../pages/Menupage";
+import { shoppingCartContext } from "../../App";
 
 export default function OrderedItem(props) {
   const { cartItems, setCartItems } = useContext(shoppingCartContext);

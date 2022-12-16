@@ -88,16 +88,14 @@ function Sidebar() {
                 className="w-[500px]"
               ></img>
               <p className="text-black text-center  p-3 -mt-7 sm:text-xl font-mono">
-                You may think to your self how can life get even more sweeter, well search no more, for you have uncovered the best 
-                chain of sweet-stores, this side of the Planet. Our age old formula, loving and caring staff tirelessly work day in and day out to
-                ensure our age old legacy lives on even in this digital age. And to celebrate our golden jubilee we are promoting a sale on all things sweet, p. s.
-                theres a lot! So order now while it's still fresh.
-              </p>
-              <br>
-              </br>
-              <p className="text-black text-left  p-3 -mt-7 sm:text-xl font-mono">
-                And for those old schooled aficianados, check out our numerous physical locations all over town, just look at the contact information or scroll 
-                to the maps below!
+                You may think to your self how can life get even more sweeter,
+                well search no more, for you have uncovered the best chain of
+                sweet-stores, this side of the Planet. Our age old formula,
+                loving and caring staff tirelessly work day in and day out to
+                ensure our age old legacy lives on even in this digital age. And
+                to celebrate our golden jubilee we are promoting a sale on all
+                things sweet, p. s. theres a lot! So order now while it's still
+                fresh.
               </p>
             </div>
           </div>

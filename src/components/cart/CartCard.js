@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { Link } from "react-router-dom";
-import { shoppingCartContext } from "../../pages/Menupage";
+import { shoppingCartContext } from "../../App";
 import OrderedItem from "./OrderedItem";
 import ProceedPayment from "./ProceedPayment";
 import "../../styles/Buttons.css";
@@ -10,7 +10,7 @@ function CartCard({ modal, setModal }) {
   const [proceed, setProceed] = useState(false);
   console.log(cartItems);
   return (
-    <div>
+    <div className="showOnTop fixed">
       {/* Put this part before </body> tag */}
       <input
         type="checkbox"
@@ -19,7 +19,7 @@ function CartCard({ modal, setModal }) {
         id="my-modal-6"
         className="modal-toggle"
       />
-      <div className="modal modal-bottom sm:modal-middle">
+      <div className="modal modal-bottom sm:modal-middle showOnTop">
         <div className="modal-box">
           <button
             onClick={() => {

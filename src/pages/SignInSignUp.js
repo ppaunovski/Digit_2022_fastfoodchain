@@ -15,6 +15,7 @@ import {
 } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
 import { signInShowContext } from "../App";
+import "../styles/Buttons.css";
 
 const signed = async (
   auth,
@@ -94,7 +95,7 @@ const StartPage = (props) => {
   }, [signInShow]);
 
   return (
-    <div id="centerDiv1">
+    <div id="centerDiv1" className="showOnTop">
       {!state && (
         <div className="signDiv">
           <input
@@ -119,10 +120,16 @@ const StartPage = (props) => {
                 alt="logo"
               ></img>
               <div className="flex gap-3 justify-center">
-                <button className="btn" onClick={() => changeState("SignIn")}>
+                <button
+                  className="btn pinkButton"
+                  onClick={() => changeState("SignIn")}
+                >
                   Sign In
                 </button>
-                <button className="btn" onClick={() => changeState("SignUp")}>
+                <button
+                  className="btn pinkButton"
+                  onClick={() => changeState("SignUp")}
+                >
                   Sign Up
                 </button>
               </div>
@@ -174,7 +181,7 @@ const StartPage = (props) => {
                   id="passwordInput"
                 />
                 <button
-                  className="btn"
+                  className="btn pinkButton"
                   onClick={() => {
                     logged(
                       auth,
@@ -251,7 +258,7 @@ const StartPage = (props) => {
                   id="passwordInput"
                 />
                 <button
-                  className="btn"
+                  className="btn pinkButton"
                   onClick={() => {
                     signed(
                       auth,

@@ -40,3 +40,7 @@
   color: hsl(0, 0%, 96%);
   border: 2px solid #ce669a;
 }
+
+.showOnTop {
+  z-index: 1000;
+}

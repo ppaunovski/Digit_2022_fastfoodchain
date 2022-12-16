@@ -1,5 +1,5 @@
 import React, { useContext, useState } from "react";
-import { shoppingCartContext } from "../../pages/Menupage";
+import { shoppingCartContext } from "../../App";
 import CartCard from "./CartCard";
 import InfoNumber from "./InfoNumber";
 import { IsAuthenticated } from "../../App";
@@ -45,7 +45,7 @@ export default function CartAction() {
         id="my-modal"
         className="modal-toggle"
       />
-      <div className="modal">
+      <div className="modal showOnTop">
         <div className="modal-box">
           <div className="flex relative">
             <h3 className="font-bold text-lg">Please sign in first :)</h3>
@@ -70,7 +70,7 @@ export default function CartAction() {
                 setNotAuthModal(!notAuthModal);
                 setSignInShow(true);
               }}
-              className="btn"
+              className="btn pinkButton"
             >
               Sign In!
             </label>

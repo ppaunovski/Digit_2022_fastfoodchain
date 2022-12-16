@@ -68,7 +68,7 @@ function MenuItems(props) {
   }
 
   return (
-    <article className=" w-full sm:w-[65vw] ">
+    <article className=" w-full sm:w-[65vw]">
       {/* <div className="fixed flex justify-center top-20 w-full">
         <div className="flex w-full justify-center">
           <h1 className="">{props.category}</h1>

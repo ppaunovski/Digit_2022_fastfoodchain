@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import OrderCounter from "./OrderCounter";
-import { shoppingCartContext } from "../../pages/Menupage";
+import { shoppingCartContext } from "../../App";
 import "../../styles/Buttons.css";
 
 export default function Modal({ props, count, setCount, modal, setModal }) {
@@ -25,7 +25,7 @@ export default function Modal({ props, count, setCount, modal, setModal }) {
   };
 
   return (
-    <div>
+    <div className="showOnTop">
       <label htmlFor="my-modal-4"></label>
       <input
         type="checkbox"
