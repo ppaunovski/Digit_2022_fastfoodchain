@@ -175,7 +175,7 @@ const StartPage = (props) => {
                   />
                 </div>
                 <input
-                  type="text"
+                  type="password"
                   placeholder="Password"
                   className="input input-bordered w-full"
                   id="passwordInput"
@@ -252,7 +252,7 @@ const StartPage = (props) => {
                   />
                 </div>
                 <input
-                  type="text"
+                  type="password"
                   placeholder="Password"
                   className="input input-bordered w-full"
                   id="passwordInput"

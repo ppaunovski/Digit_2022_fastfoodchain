@@ -62,7 +62,7 @@ function CartCard({ modal, setModal }) {
                 //setModal(!modal);
               }}
               htmlFor="my-modal-6"
-              className="btn pinkButton transition-all duration-200 tracking-widest ease-in-out"
+              className={`btn pinkButton  transition-all duration-200 tracking-widest ease-in-out`}
             >
               Proceed
             </label>

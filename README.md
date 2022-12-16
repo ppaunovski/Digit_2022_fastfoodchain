@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# DIGIT 2022 - Sweetster
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Веб сајт за приказ на продуктите на локален кафич чија примарна дејност се кафиња и секаков вид на слатки.
 
-## Available Scripts
+## Замисла
 
-In the project directory, you can run:
+1. Навигација за менување на приказот на страната
+2. Почетна страница за информации
+3. Мени страница
+4. Кошничка
+5. Имитација на нарачки
+6. Интерактивна мапа
 
-### `npm start`
+## Реализација
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Навигација
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+За навигацијата на страницата користиме React Router Dom и &lt;BrowserRouter /&gt;
 
-### `npm test`
+### Мени
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Мени страницата е поделена на две главни секции, категории на менито и приказ на елементите во менито
 
-### `npm run build`
+#### Категории
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Со клик на еден од линковите во менито се поставива state-от category со кој подоцна во &lt;MenuItems /&gt; ги филтрираме податоците кои се земаат од база.
+Во оваа компонента има и search bar кој користи useState за чување на пребаруваните податоци во менито.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+#### Елементи во менито
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Елементите се земаат како објекти од база и потоа според одбраната категорија или пребараниот збор се филтираат и се прикажуваат на страницата.
+Доколку има збор впишан во search bar-от тогаш се подесува категоријата на „“ и низата со елементи се филтрира според пребаран збор, доколку нема збор според кој се пребарува се филтрира според се=тегоријата.
+Почетна одбрана категорија секогаш е Best Sellers.
 
-### `npm run eject`
+#### Кошничка
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Кошничката е достапна само доколку корисникот е најавен, во спротивно при клик на кошничката се бара од корисникот тој да се најави.
+Доколку е најавен во кошничката се прикажуваат елемнтите од менито кои се додадени во неа и има копче со кое продолжува кон наплата.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Find us
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+При клик се отвара модал во кој има интерактивна мапа која сами ја направивме со event listeners на кој со знаменца се прикажани локациите на продавниците.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### Контакт
 
-## Learn More
+Се отвара модал на кои се прикажани информациите на Sweetster.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Log in / Log out / Sign up
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Со функционалноста на Firebase успеавме да создадеме функционален систем за најавување на корисници, и отварање на можноста за нарачување.
