@@ -42,7 +42,7 @@ export default function Test(props) {
           //className={"Menu inline-flex h-full"}
           //style={{ visibility: show ? "visible" : "hidden" }}
         >
-          <div className={location.pathname == "/" ? "relative" : ""}>
+          <div className={(location.pathname == "/" ? "relative" : "")}>
             <NavLink to="/" className="text-white">
               Home
             </NavLink>
@@ -80,14 +80,14 @@ export default function Test(props) {
           </div>
           {!props.isAuth && !window.localStorage.getItem("token") ? (
             <div
-              className="cursor-pointer text-white"
+              className="cursor-pointer text-white absolute right-8"
               onClick={() => setSignInShow(true)}
             >
               Sign In
             </div>
           ) : (
             <div
-              className="text-white"
+              className="text-white cursor-pointer absolute right-8"
               onClick={() => {
                 window.localStorage.setItem("token", "");
                 window.localStorage.setItem("name", "");
