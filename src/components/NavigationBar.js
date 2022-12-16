@@ -7,6 +7,8 @@ import { db } from "../index.js";
 import FindUs from "../pages/FindUs";
 import { auth } from "../firebase.js";
 import "../styles/Buttons.css";
+import Contact from "../pages/Contact";
+
 // export const signInShowContext = createContext({
 //   signInShow: false,
 //   setSignInShow: (value) => {},
@@ -22,6 +24,7 @@ export default function Test(props) {
   const { signInShow, setSignInShow, logOutShow, setLogOutShow } =
     useContext(signInShowContext);
   const [aboutShow, setAboutShow] = useState(false);
+  const [showContact, setShowContact] = useState(false);
 
   // const styledNav = ""
 
@@ -72,7 +75,9 @@ export default function Test(props) {
           <div className="cursor-pointer" onClick={() => setAboutShow(true)}>
             About
           </div>
-          <div>Contact</div>
+          <div className="cursor-pointer" onClick={() => setShowContact(true)}>
+            Contact
+          </div>
           {!props.isAuth && !window.localStorage.getItem("token") ? (
             <div
               className="cursor-pointer text-white"
@@ -104,6 +109,10 @@ export default function Test(props) {
           changeAuth={props.changeAuth}
         />
         <FindUs aboutShow={aboutShow} setAboutShow={setAboutShow} />
+        <Contact
+          showContact={showContact}
+          setShowContact={setShowContact}
+        ></Contact>
       </div>
     </div>
   );
