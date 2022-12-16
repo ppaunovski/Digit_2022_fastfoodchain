@@ -87,16 +87,18 @@ export default function Test(props) {
             </div>
           ) : (
             <div
-              className="text-white cursor-pointer absolute right-8"
+              className="text-white text-right cursor-pointer absolute right-8"
               onClick={() => {
                 window.localStorage.setItem("token", "");
                 window.localStorage.setItem("name", "");
                 window.localStorage.setItem("username", "");
                 window.localStorage.setItem("surname", "");
                 setLogOutShow(!logOutShow);
+                props.changeAuth(!props.isAuth);
                 logout();
               }}
             >
+              Logged in as {localStorage.getItem("name")}<br></br>
               Log out
             </div>
           )}
